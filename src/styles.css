@@ -26,3 +26,12 @@ html, body, #root { height: 100%; margin: 0; }
 /* Safe-area helpers (iOS notch) */
 .safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
 .safe-top { padding-top: env(safe-area-inset-top); }
+
+
+/* Oculta controles de Leaflet en móviles */
+@media (max-width: 768px) {
+  .leaflet-top.leaflet-left,
+  .leaflet-control-zoom {
+    display: none !important;
+  }
+}

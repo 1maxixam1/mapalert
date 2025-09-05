@@ -21,7 +21,7 @@ export default function MapView({ markers, onMapClick, onMarkerClick, placeMode=
       maxBounds={LA_RIOJA_BOUNDS}
       maxBoundsViscosity={1.0}
       minZoom={12}
-    >
+     zoomControl={false}>
       <TileLayer url={TILE.url} attribution={TILE.attribution} />
       <ClickHandler onMapClick={onMapClick} enabled={placeMode} />
       {markers.map(m => (

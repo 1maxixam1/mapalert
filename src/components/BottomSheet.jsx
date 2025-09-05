@@ -32,7 +32,7 @@ export default function BottomSheet({ open, onOpenChange, children, initialHeigh
     const dy = startY.current - t.clientY  // dragging up increases height
     const vh = Math.max(window.innerHeight, document.documentElement.clientHeight)
     const delta = dy / vh
-    setHeightPct(clamp(startH.current + delta, 0.3, 0.85))
+    setHeightPct(clamp(startH.current + delta, 0.3, 0.75))
   }
 
   function onTouchEnd() {
@@ -48,7 +48,7 @@ export default function BottomSheet({ open, onOpenChange, children, initialHeigh
   return (
     <div
       aria-hidden={!open}
-      className={`fixed inset-x-0 bottom-0 z-50 md:hidden transition-transform duration-300 will-change-transform ${
+      className={`fixed inset-x-0 bottom-0 z-50 md:hidden max-h-[75vh] transition-transform duration-300 will-change-transform ${
         open ? 'translate-y-0' : 'translate-y-[calc(100%)]'
       }`}
       style={{ height: h }}
