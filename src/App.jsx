@@ -7,6 +7,7 @@ import AddMarkerModal from './components/AddMarkerModal'
 import MarkerDetailModal from './components/MarkerDetailModal'
 import LoginModal from './components/LoginModal'
 import HelpPanel from './components/HelpPanel'
+import BottomSheet from './components/BottomSheet'
 
 import { loadMarkers, saveMarkers, loadVotes, saveVotes, getCreateCount, incCreateCount, saveUser, loadUser, clearUser } from './lib/storage'
 import { DAILY_CREATE_LIMIT, MAX_MARKER_LIFETIME_MS, NEW_MARKER_BASE_MS, EXTENSION_MS, MAX_ACTIVE_MARKERS } from './lib/limits'
@@ -190,7 +191,7 @@ export default function App() {
       <div className="absolute top-0 left-0 right-0 h-20 z-40 pointer-events-none bg-gradient-to-b from-black/30 to-transparent" />
 
       {/* FAB Agregar + chip animado */}
-      <div className="absolute bottom-6 left-6 z-50">
+      <div className="absolute bottom-6 right-6 z-50 safe-bottom md:right-6 md:bottom-6">
         <button onClick={() => setPlaceMode(p => !p)} className={`btn btn-icon ${placeMode ? 'btn-warn' : 'btn-success'}`} title={placeMode ? 'Cancelar ubicación' : 'Agregar marcador'}>
           <Plus size={20} />
         </button>

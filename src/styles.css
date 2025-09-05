@@ -21,3 +21,8 @@ html, body, #root { height: 100%; margin: 0; }
   100% { transform: translate(0, 0); opacity: 1; }
 }
 .hint-chip { animation: hintIn 260ms ease-out both; }
+
+
+/* Safe-area helpers (iOS notch) */
+.safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+.safe-top { padding-top: env(safe-area-inset-top); }

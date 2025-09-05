@@ -1,9 +1,9 @@
 import React from 'react'
 import { Clock, Trash2 } from 'lucide-react'
 
-export default function MarkerList({ markers, currentUser, onDelete, getTimeRemaining, hasUserVoted }) {
+export default function MarkerList({ markers, currentUser, onDelete, getTimeRemaining, hasUserVoted, variant = 'side' }) {
   return (
-    <div className="bg-white/95 backdrop-blur shadow-lg border-l border-gray-200 overflow-y-auto rounded-l-xl h-full max-h-[calc(100vh-4rem)] w-[min(22rem,92vw)]">
+    <div className={`${variant === "side" ? "bg-white/95 backdrop-blur shadow-lg border-l border-gray-200 rounded-l-xl h-full max-h-[calc(100vh-4rem)] w-[min(18rem,90vw)] sm:w-72 md:w-80 lg:w-96 overflow-y-auto" : "bg-transparent h-full w-full"}`}>
       <div className="px-4 py-3 border-b border-gray-200">
         <h2 className="text-lg font-semibold text-gray-800">Marcadores</h2>
         <p className="text-xs text-gray-500 mt-1">Publicaciones activas y acciones disponibles</p>
